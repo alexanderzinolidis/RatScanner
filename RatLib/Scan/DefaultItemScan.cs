@@ -36,6 +36,8 @@ public class DefaultItemScan : ItemScan
 		PricePerSlot = 0;
 		TraderName = fake ? "Fence" : "Therapist";
 		BestTraderPrice = 0;
+		FleaMarketSellPrice = 0;
+		FleaMarketFee = 0;
 	}
 
 	public override Vector2 GetToolTipPosition()

@@ -27,6 +27,8 @@ public abstract class ItemScan
 	public int? PricePerSlot{ get; set; }
 	public string? TraderName{ get; set; }
 	public int? BestTraderPrice{ get; set; }
+	public int? FleaMarketSellPrice { get; set; }
+	public int? FleaMarketFee { get; set; }
 
 	// Scan tooltip location
 	public abstract Vector2 GetToolTipPosition();

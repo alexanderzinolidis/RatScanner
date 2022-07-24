@@ -21,6 +21,10 @@ public class MarketItem
 	public int Avg24hPrice { get; set; }
 	// ReSharper restore InconsistentNaming
 
+	public int FleaMarketSellPrice { get; set; }
+	public int FleaMarketFee { get; set; }
+
+
 	public TraderPrice[] TraderPrices { get; set; }
 
 	public MarketItem(string id)

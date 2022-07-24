@@ -285,6 +285,8 @@ public class RatScannerMain : INotifyPropertyChanged
 			tempNameScan.PricePerSlot = tempNameScan.MatchedItem.GetMarketItem().Avg24hPrice / (tempNameScan.MatchedItem.Width * tempNameScan.MatchedItem.Height);
 			tempNameScan.TraderName = TraderPrice.GetTraderName(tempNameScan.MatchedItem.GetBestTrader().traderId);
 			tempNameScan.BestTraderPrice = tempNameScan.MatchedItem.GetBestTrader().price;
+			tempNameScan.FleaMarketSellPrice = tempNameScan.MatchedItem.GetFleaMarketSellPrice();
+			tempNameScan.FleaMarketFee = tempNameScan.MatchedItem.GetFleaMarketFee();
 
 			ItemScans.Enqueue(tempNameScan);
 
@@ -332,6 +334,8 @@ public class RatScannerMain : INotifyPropertyChanged
 					PricePerSlot = inspection.Item.GetMarketItem().Avg24hPrice / (inspection.Item.Width * inspection.Item.Height),
 					TraderName = TraderPrice.GetTraderName(inspection.Item.GetBestTrader().traderId),
 					BestTraderPrice = inspection.Item.GetBestTrader().price,
+					FleaMarketSellPrice = inspection.Item.GetFleaMarketSellPrice(),
+					FleaMarketFee = inspection.Item.GetFleaMarketFee(),
 				};
 
 				ItemScans.Enqueue(tempNameScan);
@@ -377,6 +381,8 @@ public class RatScannerMain : INotifyPropertyChanged
 				PricePerSlot = icon.Item.GetMarketItem().Avg24hPrice / (icon.Item.Width * icon.Item.Height),
 				TraderName = TraderPrice.GetTraderName(icon.Item.GetBestTrader().traderId),
 				BestTraderPrice = icon.Item.GetBestTrader().price,
+				FleaMarketSellPrice = icon.Item.GetFleaMarketSellPrice(),
+				FleaMarketFee = icon.Item.GetFleaMarketFee(),
 			};
 
 			ItemScans.Enqueue(tempIconScan);

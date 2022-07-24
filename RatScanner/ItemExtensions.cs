@@ -1,4 +1,4 @@
-﻿using RatScanner.FetchModels;
+using RatScanner.FetchModels;
 using RatStash;
 using RatTracking.FetchModels;
 using RatTracking.FetchModels.TarkovTracker;
@@ -233,5 +233,24 @@ public static class ItemExtensions
 		}
 
 		return result;
+	}
+
+	public static int GetFleaMarketSellPrice(this Item item)
+	{
+		return item.GetMarketItem().FleaMarketSellPrice;
+	}
+
+	public static int GetFleaMarketFee(this Item item)
+	{
+		return item.GetMarketItem().FleaMarketFee;
+	}
+
+	public static int GetQuickSell(this Item item)
+	{
+		var maxTraderPrice = item.GetMaxTraderPrice();
+		var fleaSellPrice = item.GetMarketItem().FleaMarketSellPrice;
+		var fleaFee = item.GetMarketItem().FleaMarketFee;
+
+		return fleaFee;
 	}
 }
